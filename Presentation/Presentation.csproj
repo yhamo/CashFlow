@@ -109,7 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Metier\Metier.csproj">
-      <Project>{aa92304f-c870-4ac5-b1cd-9ce4448bc4a7}</Project>
+      <Project>{9102ef8e-a708-46d5-a004-1307685ea18c}</Project>
       <Name>Metier</Name>
     </ProjectReference>
   </ItemGroup>
