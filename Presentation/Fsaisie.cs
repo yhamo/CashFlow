@@ -11,8 +11,10 @@ using Metier;
 
 namespace WindowsCashFlow
 {
+    
     public partial class Fsaisie : Form
     {
+        int cpt = 1;
         private CashFlow unCash;
         public Fsaisie()
         {
@@ -21,6 +23,7 @@ namespace WindowsCashFlow
 
         public Fsaisie(CashFlow cash)
         {
+            
             unCash = cash;
             InitializeComponent();
 
@@ -33,52 +36,64 @@ namespace WindowsCashFlow
 
         private void btn_valider_Click(object sender, EventArgs e)
         {
-            if ((tb_txAct.Text != "") && (tb_ann.Text != "") && (tb_ca.Text != "") && (tb_inv.Text != ""))
+            cpt++;
+            if (cb_MemeValeur.Checked == true)
             {
-                String tampon;
-
-                tampon = tb_ca.Text;
-                Double ca = Double.Parse(tampon);
-                unCash.Ca = ca;
-
-                if (tb_cv.Text != "")
+                if ((tb_txAct.Text != "") && (tb_ann.Text != "") && (tb_ca.Text != "") && (tb_inv.Text != ""))
                 {
-                    tampon = tb_cv.Text;
-                    Double cv = Double.Parse(tampon);
-                    unCash.ChargesVariables = cv;
+                    String tampon;
+
+                    tampon = tb_ca.Text;
+                    Double ca = Double.Parse(tampon);
+                    unCash.Ca.Add(ca);
+
+                    if (tb_cv.Text != "")
+                    {
+                        tampon = tb_cv.Text;
+                        Double cv = Double.Parse(tampon);
+                        unCash.ChargesVariables.Add(cv);
+                    }
+                    else
+                        unCash.ChargesVariables.Add(0.0);
+
+                    if (tb_cf.Text != "")
+                    {
+                        tampon = tb_cf.Text;
+                        Double cf = Double.Parse(tampon);
+                        unCash.ChargesFixes.Add(cf);
+                    }
+                    else
+                        unCash.ChargesFixes.Add(0.0);
+
+                    tampon = tb_inv.Text;
+                    Double inv = Double.Parse(tampon);
+                    unCash.Investissement = inv;
+
+                    tampon = tb_txAct.Text;
+                    Double txAct = Double.Parse(tampon);
+                    unCash.TxActualisation = txAct;
+
+                    tampon = tb_txAct.Text;
+                    Double nbannees = Double.Parse(tampon);
+                    unCash.NbAnnee = nbannees;
+
                 }
                 else
-                    unCash.ChargesVariables = 0;
+                    MessageBox.Show("Entrez les champs obligatoires");
 
-                if (tb_cf.Text != "")
-                {
-                    tampon = tb_cf.Text;
-                    Double cf = Double.Parse(tampon);
-                    unCash.ChargesFixes = cf;
-                }
-                else
-                    unCash.ChargesFixes = 0;
-
-                tampon = tb_inv.Text;
-                Double inv = Double.Parse(tampon);
-                unCash.Investissement = inv;
-
-                tampon = tb_txAct.Text;
-                Double txAct = Double.Parse(tampon);
-                unCash.TxActualisation = txAct;
-
-                tampon = tb_txAct.Text;
-                Double nbannees = Double.Parse(tampon);
-                unCash.NbAnnee = nbannees;
+                this.Close();
 
             }
             else
-                MessageBox.Show("Entrez les champs obligatoires");
+            {
 
-            this.Close();
+                gb_infosAnnée.Text = "Information Pour année n°" + cpt;
+            }
+
+            
         }
 
-       
+
 
         private void tb_inv_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -169,7 +184,7 @@ namespace WindowsCashFlow
 
         private void Fsaisie_Load(object sender, EventArgs e)
         {
-
+            gb_infosAnnée.Text = "Informations pour l'année n°" + cpt;
         }
 
         private void btn_Reset_Click(object sender, EventArgs e)

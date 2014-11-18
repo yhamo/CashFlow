@@ -9,20 +9,24 @@ namespace Metier
     public class CashFlow
     {
         //Attributs
-        private double ca;
-        private double chargesFixes;
+
+
+
+        private List<double> ca= new List<double>();
+        private List<double> chargesFixes=new List<double>();
         private double investissement;
         private double nbAnnee;
         private double txActualisation;
-        private double chargesVariables;
+        private List<double> chargesVariables=new List<double>();
 
+     
         //Accesseurs
-        public double Ca
+
+        public List<double> Ca
         {
             get { return ca; }
             set { ca = value; }
         }
-
 
         public double Investissement
         {
@@ -44,22 +48,22 @@ namespace Metier
             set { txActualisation = value; }
         }
 
-        public double ChargesVariables
-        {
-            get { return chargesVariables; }
-            set { chargesVariables = value; }
-        }
+       
 
 
-        public double ChargesFixes
+        public List<double> ChargesFixes
         {
             get { return chargesFixes; }
             set { chargesFixes = value; }
         }
-
         public CashFlow()
         { }
 
+        public List<double> ChargesVariables
+        {
+            get { return chargesVariables; }
+            set { chargesVariables = value; }
+        }
 
     }
 }
