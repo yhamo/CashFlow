@@ -50,6 +50,7 @@
             this.cb_MemeValeur = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tb_ca = new System.Windows.Forms.TextBox();
+            this.btn_Reset = new System.Windows.Forms.Button();
             this.gb_infosProjet.SuspendLayout();
             this.gb_infosAnnée.SuspendLayout();
             this.SuspendLayout();
@@ -157,9 +158,9 @@
             // 
             // btn_annuler
             // 
-            this.btn_annuler.Location = new System.Drawing.Point(313, 432);
+            this.btn_annuler.Location = new System.Drawing.Point(313, 421);
             this.btn_annuler.Name = "btn_annuler";
-            this.btn_annuler.Size = new System.Drawing.Size(75, 23);
+            this.btn_annuler.Size = new System.Drawing.Size(75, 45);
             this.btn_annuler.TabIndex = 13;
             this.btn_annuler.Text = "Annuler";
             this.btn_annuler.UseVisualStyleBackColor = true;
@@ -167,9 +168,9 @@
             // 
             // btn_valider
             // 
-            this.btn_valider.Location = new System.Drawing.Point(519, 432);
+            this.btn_valider.Location = new System.Drawing.Point(519, 421);
             this.btn_valider.Name = "btn_valider";
-            this.btn_valider.Size = new System.Drawing.Size(75, 23);
+            this.btn_valider.Size = new System.Drawing.Size(75, 45);
             this.btn_valider.TabIndex = 14;
             this.btn_valider.Text = "Valider";
             this.btn_valider.UseVisualStyleBackColor = true;
@@ -274,12 +275,23 @@
             this.tb_ca.Size = new System.Drawing.Size(100, 20);
             this.tb_ca.TabIndex = 14;
             // 
+            // btn_Reset
+            // 
+            this.btn_Reset.Location = new System.Drawing.Point(134, 421);
+            this.btn_Reset.Name = "btn_Reset";
+            this.btn_Reset.Size = new System.Drawing.Size(88, 45);
+            this.btn_Reset.TabIndex = 22;
+            this.btn_Reset.Text = "Effacer les données";
+            this.btn_Reset.UseVisualStyleBackColor = true;
+            this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
+            // 
             // Fsaisie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(804, 523);
+            this.Controls.Add(this.btn_Reset);
             this.Controls.Add(this.gb_infosAnnée);
             this.Controls.Add(this.gb_infosProjet);
             this.Controls.Add(this.btn_valider);
@@ -321,5 +333,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tb_ca;
         private System.Windows.Forms.CheckBox cb_MemeValeur;
+        private System.Windows.Forms.Button btn_Reset;
     }
 }

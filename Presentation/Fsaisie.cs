@@ -172,6 +172,11 @@ namespace WindowsCashFlow
 
         }
 
+        private void btn_Reset_Click(object sender, EventArgs e)
+        {
+            //tb_ann.Text == "";
+        }
+
 
     }
 }
