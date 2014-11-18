@@ -39,20 +39,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tb_ca = new System.Windows.Forms.TextBox();
             this.btn_annuler = new System.Windows.Forms.Button();
             this.btn_valider = new System.Windows.Forms.Button();
-            this.cb_MemeValeur = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_ValeurResiduelle = new System.Windows.Forms.TextBox();
+            this.tb_Montant_investissement_materiels = new System.Windows.Forms.TextBox();
             this.gb_infosProjet = new System.Windows.Forms.GroupBox();
             this.gb_infosAnnée = new System.Windows.Forms.GroupBox();
+            this.cb_MemeValeur = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.tb_ca_annee = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.tb_ca = new System.Windows.Forms.TextBox();
             this.gb_infosProjet.SuspendLayout();
             this.gb_infosAnnée.SuspendLayout();
             this.SuspendLayout();
@@ -158,27 +155,9 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Saisie des données";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Italic);
-            this.label7.Location = new System.Drawing.Point(142, 238);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 19);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Chiffre d\'affaire :";
-            // 
-            // tb_ca
-            // 
-            this.tb_ca.Location = new System.Drawing.Point(272, 237);
-            this.tb_ca.Name = "tb_ca";
-            this.tb_ca.Size = new System.Drawing.Size(100, 20);
-            this.tb_ca.TabIndex = 12;
-            this.tb_ca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_ca_KeyPress);
-            // 
             // btn_annuler
             // 
-            this.btn_annuler.Location = new System.Drawing.Point(309, 478);
+            this.btn_annuler.Location = new System.Drawing.Point(313, 432);
             this.btn_annuler.Name = "btn_annuler";
             this.btn_annuler.Size = new System.Drawing.Size(75, 23);
             this.btn_annuler.TabIndex = 13;
@@ -188,26 +167,13 @@
             // 
             // btn_valider
             // 
-            this.btn_valider.Location = new System.Drawing.Point(613, 478);
+            this.btn_valider.Location = new System.Drawing.Point(519, 432);
             this.btn_valider.Name = "btn_valider";
             this.btn_valider.Size = new System.Drawing.Size(75, 23);
             this.btn_valider.TabIndex = 14;
             this.btn_valider.Text = "Valider";
             this.btn_valider.UseVisualStyleBackColor = true;
             this.btn_valider.Click += new System.EventHandler(this.btn_valider_Click);
-            // 
-            // cb_MemeValeur
-            // 
-            this.cb_MemeValeur.AutoSize = true;
-            this.cb_MemeValeur.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cb_MemeValeur.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_MemeValeur.ForeColor = System.Drawing.Color.Red;
-            this.cb_MemeValeur.Location = new System.Drawing.Point(188, 434);
-            this.cb_MemeValeur.Name = "cb_MemeValeur";
-            this.cb_MemeValeur.Size = new System.Drawing.Size(424, 23);
-            this.cb_MemeValeur.TabIndex = 15;
-            this.cb_MemeValeur.Text = "Cocher cette case si les valeurs sont les mêmes pour chaques année";
-            this.cb_MemeValeur.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -229,46 +195,44 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "Montant investissement matériels :";
             // 
-            // textBox1
+            // tb_ValeurResiduelle
             // 
-            this.textBox1.Location = new System.Drawing.Point(272, 195);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 18;
+            this.tb_ValeurResiduelle.Location = new System.Drawing.Point(272, 195);
+            this.tb_ValeurResiduelle.Name = "tb_ValeurResiduelle";
+            this.tb_ValeurResiduelle.Size = new System.Drawing.Size(100, 20);
+            this.tb_ValeurResiduelle.TabIndex = 18;
             // 
-            // textBox2
+            // tb_Montant_investissement_materiels
             // 
-            this.textBox2.Location = new System.Drawing.Point(272, 77);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 19;
+            this.tb_Montant_investissement_materiels.Location = new System.Drawing.Point(272, 77);
+            this.tb_Montant_investissement_materiels.Name = "tb_Montant_investissement_materiels";
+            this.tb_Montant_investissement_materiels.Size = new System.Drawing.Size(100, 20);
+            this.tb_Montant_investissement_materiels.TabIndex = 19;
             // 
             // gb_infosProjet
             // 
             this.gb_infosProjet.Controls.Add(this.tb_ann);
-            this.gb_infosProjet.Controls.Add(this.textBox2);
+            this.gb_infosProjet.Controls.Add(this.tb_Montant_investissement_materiels);
             this.gb_infosProjet.Controls.Add(this.tb_inv);
-            this.gb_infosProjet.Controls.Add(this.textBox1);
+            this.gb_infosProjet.Controls.Add(this.tb_ValeurResiduelle);
             this.gb_infosProjet.Controls.Add(this.tb_txAct);
             this.gb_infosProjet.Controls.Add(this.label9);
             this.gb_infosProjet.Controls.Add(this.label1);
             this.gb_infosProjet.Controls.Add(this.label8);
             this.gb_infosProjet.Controls.Add(this.label2);
             this.gb_infosProjet.Controls.Add(this.label3);
-            this.gb_infosProjet.Controls.Add(this.label7);
-            this.gb_infosProjet.Controls.Add(this.tb_ca);
             this.gb_infosProjet.Location = new System.Drawing.Point(12, 97);
             this.gb_infosProjet.Name = "gb_infosProjet";
-            this.gb_infosProjet.Size = new System.Drawing.Size(437, 316);
+            this.gb_infosProjet.Size = new System.Drawing.Size(431, 238);
             this.gb_infosProjet.TabIndex = 20;
             this.gb_infosProjet.TabStop = false;
             this.gb_infosProjet.Text = "Informations projet";
             // 
             // gb_infosAnnée
             // 
-            this.gb_infosAnnée.Controls.Add(this.checkBox1);
+            this.gb_infosAnnée.Controls.Add(this.cb_MemeValeur);
             this.gb_infosAnnée.Controls.Add(this.label10);
-            this.gb_infosAnnée.Controls.Add(this.tb_ca_annee);
+            this.gb_infosAnnée.Controls.Add(this.tb_ca);
             this.gb_infosAnnée.Controls.Add(this.tb_cv);
             this.gb_infosAnnée.Controls.Add(this.tb_cf);
             this.gb_infosAnnée.Controls.Add(this.label4);
@@ -280,6 +244,19 @@
             this.gb_infosAnnée.TabStop = false;
             this.gb_infosAnnée.Text = "informations Pour année n°";
             // 
+            // cb_MemeValeur
+            // 
+            this.cb_MemeValeur.AutoSize = true;
+            this.cb_MemeValeur.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cb_MemeValeur.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_MemeValeur.ForeColor = System.Drawing.Color.Red;
+            this.cb_MemeValeur.Location = new System.Drawing.Point(32, 178);
+            this.cb_MemeValeur.Name = "cb_MemeValeur";
+            this.cb_MemeValeur.Size = new System.Drawing.Size(242, 42);
+            this.cb_MemeValeur.TabIndex = 16;
+            this.cb_MemeValeur.Text = "Cocher cette case si les valeurs\r\n sont les mêmes pour chaques année";
+            this.cb_MemeValeur.UseVisualStyleBackColor = false;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -290,25 +267,12 @@
             this.label10.TabIndex = 13;
             this.label10.Text = "Chiffre d\'affaire :";
             // 
-            // tb_ca_annee
+            // tb_ca
             // 
-            this.tb_ca_annee.Location = new System.Drawing.Point(174, 138);
-            this.tb_ca_annee.Name = "tb_ca_annee";
-            this.tb_ca_annee.Size = new System.Drawing.Size(100, 20);
-            this.tb_ca_annee.TabIndex = 14;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.checkBox1.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.Red;
-            this.checkBox1.Location = new System.Drawing.Point(32, 178);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(242, 42);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Cocher cette case si les valeurs\r\n sont les mêmes pour chaques année";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.tb_ca.Location = new System.Drawing.Point(174, 138);
+            this.tb_ca.Name = "tb_ca";
+            this.tb_ca.Size = new System.Drawing.Size(100, 20);
+            this.tb_ca.TabIndex = 14;
             // 
             // Fsaisie
             // 
@@ -318,7 +282,6 @@
             this.ClientSize = new System.Drawing.Size(804, 523);
             this.Controls.Add(this.gb_infosAnnée);
             this.Controls.Add(this.gb_infosProjet);
-            this.Controls.Add(this.cb_MemeValeur);
             this.Controls.Add(this.btn_valider);
             this.Controls.Add(this.btn_annuler);
             this.Controls.Add(this.label6);
@@ -347,19 +310,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tb_ca;
         private System.Windows.Forms.Button btn_annuler;
         private System.Windows.Forms.Button btn_valider;
-        private System.Windows.Forms.CheckBox cb_MemeValeur;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_ValeurResiduelle;
+        private System.Windows.Forms.TextBox tb_Montant_investissement_materiels;
         private System.Windows.Forms.GroupBox gb_infosProjet;
         private System.Windows.Forms.GroupBox gb_infosAnnée;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tb_ca_annee;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox tb_ca;
+        private System.Windows.Forms.CheckBox cb_MemeValeur;
     }
 }
