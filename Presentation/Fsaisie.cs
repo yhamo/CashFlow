@@ -127,6 +127,8 @@ namespace WindowsCashFlow
                     unCash.NbAnnee = nbannees;
 #endregion 
                 }
+
+
                 else
                     MessageBox.Show("Entrez les champs obligatoires");
 
