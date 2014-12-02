@@ -72,7 +72,7 @@ namespace WindowsCashFlow
                     
                     #endregion
 
-                    while (unCash.NbAnnee < cpt)
+                    while (unCash.NbAnnee = cpt)
                     {
                        
                         tampon = tb_ca.Text;

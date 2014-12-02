@@ -81,6 +81,39 @@ namespace Metier
             get { return chargesVariables; }
             set { chargesVariables = value; }
         }
+        public double ResultatAvantImpôt(int nbAnnee)
+        {
+            double calcul = Ca[nbAnnee] - ChargesFixes[nbAnnee] - ChargesVariables[nbAnnee] - Ammortissement();
+
+            return (calcul);
+        }
+        public double Ammortissement()
+        {
+            return (0.0);
+        }
+        public double ResultatAprèsImpôt()
+        {
+            
+            return (ResultatAvantImpôt(NbAnnee) * (0.3316));
+        }
+         public double CFActualisé(int nbAnnee)
+        {
+            double calcul = Ca[nbAnnee] * (Math.Pow((1 + (TxActualisation / 100)),-nbAnnee));
+            return calcul;
+        }
+         public double VAN( )
+         {
+             double merde = 1.0;
+             double calcul = 1.0;
+             for (int i = 0; i < NbAnnee; i++)
+             {
+                 merde = CFActualisé(i);
+                 calcul = calcul + merde;
+                 
+             }
+             return calcul;
+         }
+        
 
     }
 }
