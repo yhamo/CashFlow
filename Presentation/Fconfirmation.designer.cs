@@ -37,6 +37,7 @@
             this.ca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_fermer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_conf)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,11 +114,22 @@
             this.cv.HeaderText = "Charges Variables";
             this.cv.Name = "cv";
             // 
+            // bt_fermer
+            // 
+            this.bt_fermer.Location = new System.Drawing.Point(544, 346);
+            this.bt_fermer.Name = "bt_fermer";
+            this.bt_fermer.Size = new System.Drawing.Size(75, 23);
+            this.bt_fermer.TabIndex = 6;
+            this.bt_fermer.Text = "Fermer";
+            this.bt_fermer.UseVisualStyleBackColor = true;
+            this.bt_fermer.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Fconfirmation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 499);
+            this.Controls.Add(this.bt_fermer);
             this.Controls.Add(this.dg_conf);
             this.Controls.Add(this.lb_invMat);
             this.Controls.Add(this.lb_resid);
@@ -144,5 +156,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ca;
         private System.Windows.Forms.DataGridViewTextBoxColumn cf;
         private System.Windows.Forms.DataGridViewTextBoxColumn cv;
+        private System.Windows.Forms.Button bt_fermer;
     }
 }

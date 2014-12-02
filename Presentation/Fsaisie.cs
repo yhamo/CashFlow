@@ -56,7 +56,7 @@ namespace WindowsCashFlow
                         unCash.TxActualisation = txAct;
 
                         tampon = tb_ann.Text;
-                        Double nbannees = Double.Parse(tampon);
+                        int nbannees = int.Parse(tampon);
                         unCash.NbAnnee = nbannees;
 
                         tampon = tb_Montant_investissement_materiels.Text;
@@ -72,7 +72,7 @@ namespace WindowsCashFlow
                     
                     #endregion
 
-                    while (unCash.NbAnnee < cpt)
+                    while (unCash.NbAnnee >= cpt)
                     {
                        
                         tampon = tb_ca.Text;
@@ -158,7 +158,7 @@ namespace WindowsCashFlow
                         unCash.TxActualisation = txAct;
 
                         tampon = tb_ann.Text;
-                        Double nbannees = Double.Parse(tampon);
+                        int nbannees = int.Parse(tampon);
                         unCash.NbAnnee = nbannees;
 
                         tampon = tb_Montant_investissement_materiels.Text;

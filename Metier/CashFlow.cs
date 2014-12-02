@@ -15,7 +15,7 @@ namespace Metier
         private List<double> ca= new List<double>();
         private List<double> chargesFixes=new List<double>();
         private double investissement;
-        private double nbAnnee;
+        private int nbAnnee;
         private double txActualisation;
         private List<double> chargesVariables=new List<double>();
         private double valeurResid;
@@ -52,7 +52,7 @@ namespace Metier
         }
 
 
-        public double NbAnnee
+        public int NbAnnee
         {
             get { return nbAnnee; }
             set { nbAnnee = value; }

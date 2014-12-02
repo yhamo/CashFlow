@@ -30,5 +30,16 @@ namespace WindowsCashFlow
             Fsaisie uneFSD = new Fsaisie(unCashFlow);
             uneFSD.ShowDialog();
         }
+
+        private void Fprincipale_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resultatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ftableau uneFSD = new Ftableau(unCashFlow);
+            uneFSD.ShowDialog();
+        }
     }
 }
