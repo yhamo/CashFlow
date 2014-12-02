@@ -34,114 +34,169 @@ namespace WindowsCashFlow
             this.Close();
         }
 
+        int nbAnn = 1;
         private void btn_valider_Click(object sender, EventArgs e)
         {
-            cpt++;
-            if (cb_MemeValeur.Checked==true)
+
+          
+            if (cb_MemeValeur.Checked == true)
             {
                 if ((tb_txAct.Text != "") && (tb_ann.Text != "") && (tb_ca.Text != "") && (tb_inv.Text != ""))
                 {
-#region 
-                    String tampon;
+                    cpt = nbAnn;
+                    #region
+                    
+                        String tampon;
+                        tampon = tb_inv.Text;
+                        Double inv = Double.Parse(tampon);
+                        unCash.Investissement = inv;
 
-                    tampon = tb_ca.Text;
-                    Double ca = Double.Parse(tampon);
-                    unCash.Ca.Add(ca);
+                        tampon = tb_txAct.Text;
+                        Double txAct = Double.Parse(tampon);
+                        unCash.TxActualisation = txAct;
 
-                    if (tb_cv.Text != "")
+                        tampon = tb_ann.Text;
+                        Double nbannees = Double.Parse(tampon);
+                        unCash.NbAnnee = nbannees;
+
+                        tampon = tb_Montant_investissement_materiels.Text;
+                        Double mat = Double.Parse(tampon);
+                        unCash.InvetMateriel = mat;
+
+
+                        tampon = tb_ValeurResiduelle.Text;
+                        Double resid = Double.Parse(tampon);
+                        unCash.ValeurResid = resid;
+
+
+                    
+                    #endregion
+
+                    while (unCash.NbAnnee < cpt)
                     {
-                        tampon = tb_cv.Text;
-                        Double cv = Double.Parse(tampon);
-                        unCash.ChargesVariables.Add(cv);
-                    }
-                    else
-                        unCash.ChargesVariables.Add(0.0);
+                       
+                        tampon = tb_ca.Text;
+                        Double ca = Double.Parse(tampon);
+                        unCash.Ca.Add(ca);
 
-                    if (tb_cf.Text != "")
+                        if (tb_cv.Text != "")
+                        {
+                            tampon = tb_cv.Text;
+                            Double cv = Double.Parse(tampon);
+                            unCash.ChargesVariables.Add(cv);
+                        }
+                        else
+                            unCash.ChargesVariables.Add(0.0);
+
+                        if (tb_cf.Text != "")
+                        {
+                            tampon = tb_cf.Text;
+                            Double cf = Double.Parse(tampon);
+                            unCash.ChargesFixes.Add(cf);
+                        }
+                        else
+                        {
+                            unCash.ChargesFixes.Add(0.0);
+                        }
+
+                        cpt++;
+                    }
+                    this.Close();
+                    Fconfirmation f = new Fconfirmation(unCash);
+                    f.ShowDialog();
+                    
+                }
+                   
+                else
+                    MessageBox.Show("Entrez les champs obligatoires");
+
+            }
+
+            else
+            {
+              
+                if ((tb_txAct.Text != "") && (tb_ann.Text != "") && (tb_ca.Text != "") && (tb_inv.Text != ""))
+                {
+                    gb_infosProjet.Enabled = false;
+                    nbAnn++;
+                    gb_infosAnnée.Text = "Info année " + nbAnn;
+
+                    #region
                     {
-                        tampon = tb_cf.Text;
-                        Double cf = Double.Parse(tampon);
-                        unCash.ChargesFixes.Add(cf);
+                        String tampon;
+
+                        tampon = tb_ca.Text;
+                        Double ca = Double.Parse(tampon);
+                        unCash.Ca.Add(ca);
+
+                        if (tb_cv.Text != "")
+                        {
+                            tampon = tb_cv.Text;
+                            Double cv = Double.Parse(tampon);
+                            unCash.ChargesVariables.Add(cv);
+                        }
+                        else
+                            unCash.ChargesVariables.Add(0.0);
+
+                        if (tb_cf.Text != "")
+                        {
+                            tampon = tb_cf.Text;
+                            Double cf = Double.Parse(tampon);
+                            unCash.ChargesFixes.Add(cf);
+                        }
+                        else
+                        {
+                            unCash.ChargesFixes.Add(0.0);
+                        }
+
+                        tampon = tb_inv.Text;
+                        Double inv = Double.Parse(tampon);
+                        unCash.Investissement = inv;
+
+                        tampon = tb_txAct.Text;
+                        Double txAct = Double.Parse(tampon);
+                        unCash.TxActualisation = txAct;
+
+                        tampon = tb_ann.Text;
+                        Double nbannees = Double.Parse(tampon);
+                        unCash.NbAnnee = nbannees;
+
+                        tampon = tb_Montant_investissement_materiels.Text;
+                        Double mat = Double.Parse(tampon);
+                        unCash.InvetMateriel = mat;
+
+
+                        tampon = tb_ValeurResiduelle.Text;
+                        Double resid = Double.Parse(tampon);
+                        unCash.ValeurResid = resid;
+
+
                     }
-                    else
-                        unCash.ChargesFixes.Add(0.0);
+                    #endregion
+                    tb_cf.Text = "";
+                    tb_cv.Text = "";
+                    tb_ca.Text = "";
 
-                    tampon = tb_inv.Text;
-                    Double inv = Double.Parse(tampon);
-                    unCash.Investissement = inv;
-
-                    tampon = tb_txAct.Text;
-                    Double txAct = Double.Parse(tampon);
-                    unCash.TxActualisation = txAct;
-
-                    tampon = tb_txAct.Text;
-                    Double nbannees = Double.Parse(tampon);
-                    unCash.NbAnnee = nbannees;
-#endregion 
                 }
                 else
                     MessageBox.Show("Entrez les champs obligatoires");
 
             }
 
-            
-            while ((cb_MemeValeur.Checked != true) || (cpt <= unCash.NbAnnee))
+
+
+
+
+            if (unCash.NbAnnee < (nbAnn))
             {
-                if ((tb_txAct.Text != "") && (tb_ann.Text != "") && (tb_ca.Text != "") && (tb_inv.Text != ""))
-                {
-#region 
-                    String tampon;
-
-                    tampon = tb_ca.Text;
-                    Double ca = Double.Parse(tampon);
-                    unCash.Ca.Add(ca);
-
-                    if (tb_cv.Text != "")
-                    {
-                        tampon = tb_cv.Text;
-                        Double cv = Double.Parse(tampon);
-                        unCash.ChargesVariables.Add(cv);
-                    }
-                    else
-                        unCash.ChargesVariables.Add(0.0);
-
-                    if (tb_cf.Text != "")
-                    {
-                        tampon = tb_cf.Text;
-                        Double cf = Double.Parse(tampon);
-                        unCash.ChargesFixes.Add(cf);
-                    }
-                    else
-                        unCash.ChargesFixes.Add(0.0);
-
-                    tampon = tb_inv.Text;
-                    Double inv = Double.Parse(tampon);
-                    unCash.Investissement = inv;
-
-                    tampon = tb_txAct.Text;
-                    Double txAct = Double.Parse(tampon);
-                    unCash.TxActualisation = txAct;
-
-                    tampon = tb_txAct.Text;
-                    Double nbannees = Double.Parse(tampon);
-                    unCash.NbAnnee = nbannees;
-#endregion 
-                }
-
-
-                else
-                    MessageBox.Show("Entrez les champs obligatoires");
-
-                
-
-
+                this.Close();
+                Fconfirmation f = new Fconfirmation(unCash);
+                f.ShowDialog();
             }
-        
-            
-           
 
+            
                 
-            this.Close();
+          
         }
 
 

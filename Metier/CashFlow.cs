@@ -18,9 +18,26 @@ namespace Metier
         private double nbAnnee;
         private double txActualisation;
         private List<double> chargesVariables=new List<double>();
+        private double valeurResid;
+        private double invetMateriel;
+
 
      
         //Accesseurs
+
+
+        public double ValeurResid
+        {
+            get { return valeurResid; }
+            set { valeurResid = value; }
+        }
+
+
+        public double InvetMateriel
+        {
+            get { return invetMateriel; }
+            set { invetMateriel = value; }
+        }
 
         public List<double> Ca
         {
