@@ -30,16 +30,17 @@
         {
             this.tbControl = new System.Windows.Forms.TabControl();
             this.tabCashFLow = new System.Windows.Forms.TabPage();
-            this.dg_cash = new System.Windows.Forms.DataGridView();
             this.tabCashFlowAct = new System.Windows.Forms.TabPage();
             this.dg_CashActualise = new System.Windows.Forms.DataGridView();
             this.tabConclusion = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
+            this.titre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dg_cash = new System.Windows.Forms.DataGridView();
             this.tbControl.SuspendLayout();
             this.tabCashFLow.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dg_cash)).BeginInit();
             this.tabCashFlowAct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_CashActualise)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_cash)).BeginInit();
             this.SuspendLayout();
             // 
             // tbControl
@@ -64,14 +65,6 @@
             this.tabCashFLow.Text = "CashFlow";
             this.tabCashFLow.UseVisualStyleBackColor = true;
             // 
-            // dg_cash
-            // 
-            this.dg_cash.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_cash.Location = new System.Drawing.Point(6, 6);
-            this.dg_cash.Name = "dg_cash";
-            this.dg_cash.Size = new System.Drawing.Size(575, 329);
-            this.dg_cash.TabIndex = 0;
-            // 
             // tabCashFlowAct
             // 
             this.tabCashFlowAct.Controls.Add(this.dg_CashActualise);
@@ -88,7 +81,7 @@
             this.dg_CashActualise.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_CashActualise.Location = new System.Drawing.Point(6, 6);
             this.dg_CashActualise.Name = "dg_CashActualise";
-            this.dg_CashActualise.Size = new System.Drawing.Size(601, 316);
+            this.dg_CashActualise.Size = new System.Drawing.Size(601, 329);
             this.dg_CashActualise.TabIndex = 0;
             // 
             // tabConclusion
@@ -105,11 +98,29 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(194, 39);
+            this.label1.Location = new System.Drawing.Point(277, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(272, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Résultat de la simulation";
+            // 
+            // titre
+            // 
+            this.titre.HeaderText = "";
+            this.titre.Name = "titre";
+            // 
+            // dg_cash
+            // 
+            this.dg_cash.AllowDrop = true;
+            this.dg_cash.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_cash.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.titre});
+            this.dg_cash.Location = new System.Drawing.Point(6, 6);
+            this.dg_cash.Name = "dg_cash";
+            this.dg_cash.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dg_cash.Size = new System.Drawing.Size(601, 329);
+            this.dg_cash.TabIndex = 0;
+            this.dg_cash.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_cash_CellContentClick);
             // 
             // Ftableau
             // 
@@ -120,11 +131,12 @@
             this.Controls.Add(this.tbControl);
             this.Name = "Ftableau";
             this.Text = "Ftableau";
+            this.Load += new System.EventHandler(this.Ftableau_Load);
             this.tbControl.ResumeLayout(false);
             this.tabCashFLow.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dg_cash)).EndInit();
             this.tabCashFlowAct.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dg_CashActualise)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_cash)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,10 +146,11 @@
 
         private System.Windows.Forms.TabControl tbControl;
         private System.Windows.Forms.TabPage tabCashFLow;
-        private System.Windows.Forms.DataGridView dg_cash;
         private System.Windows.Forms.TabPage tabCashFlowAct;
         private System.Windows.Forms.DataGridView dg_CashActualise;
         private System.Windows.Forms.TabPage tabConclusion;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dg_cash;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titre;
     }
 }

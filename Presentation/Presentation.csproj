@@ -56,12 +56,6 @@
     <Compile Include="Fprincipale.designer.cs">
       <DependentUpon>Fprincipale.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fresultat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Fresultat.designer.cs">
-      <DependentUpon>Fresultat.cs</DependentUpon>
-    </Compile>
     <Compile Include="Fsaisie.cs">
       <SubType>Form</SubType>
     </Compile>
