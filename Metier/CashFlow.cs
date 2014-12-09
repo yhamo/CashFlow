@@ -73,6 +73,8 @@ namespace Metier
             get { return chargesFixes; }
             set { chargesFixes = value; }
         }
+
+
         public CashFlow()
         { }
 
@@ -81,16 +83,32 @@ namespace Metier
             get { return chargesVariables; }
             set { chargesVariables = value; }
         }
+
+        /// <summary>
+        /// Resultat avant impot
+        /// </summary>
+        /// <param name="nbAnnee"></param>
+        /// <returns></returns>
         public double ResultatAvantImpôt(int nbAnnee)
         {
             double calcul = Ca[nbAnnee] - ChargesFixes[nbAnnee] - ChargesVariables[nbAnnee] - Ammortissement();
 
             return (calcul);
         }
+
+        /// <summary>
+        /// Retourne ammortissment 
+        /// </summary>
+        /// <returns></returns>
         public double Ammortissement()
         {
             return (0.0);
         }
+
+        /// <summary>
+        /// calcul resultat apres impot
+        /// </summary>
+        /// <returns></returns>
         public double ResultatAprèsImpôt()
         {
             
@@ -101,6 +119,11 @@ namespace Metier
             double calcul = Ca[nbAnnee] * (Math.Pow((1 + (TxActualisation / 100)),-nbAnnee));
             return calcul;
         }
+
+        /// <summary>
+        /// Calcul de la Van
+        /// </summary>
+        /// <returns></returns>
          public double VAN( )
          {
              double merde = 1.0;

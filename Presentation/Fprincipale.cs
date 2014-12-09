@@ -58,7 +58,7 @@ namespace WindowsCashFlow
         /// <param name="e"></param>
         private void resultatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (unCashFlow==null||unCashFlow.InvetMateriel==0) 
+            if (unCashFlow==null||unCashFlow.NbAnnee==0) 
             {
                 MessageBox.Show("Veuillez entrez d'abord des données");
             }
