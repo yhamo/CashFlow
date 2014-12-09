@@ -109,14 +109,17 @@ namespace Metier
         /// calcul resultat apres impot
         /// </summary>
         /// <returns></returns>
-        public double ResultatAprèsImpôt()
+        public double ValeurImpôt(int i)
         {
             
-            return (ResultatAvantImpôt(NbAnnee) * (0.3316));
+            return (ResultatAvantImpôt(i) * (0.35));
         }
-         public double CFActualisé(int nbAnnee)
+
+
+
+         public double CFActualisé(int i)
         {
-            double calcul = Ca[nbAnnee] * (Math.Pow((1 + (TxActualisation / 100)),-nbAnnee));
+            double calcul = CalculCashFlow(i) * ((Math.Pow((1+ (TxActualisation / 100)), -(i+1)))) ;
             return calcul;
         }
 
@@ -138,5 +141,22 @@ namespace Metier
          }
         
 
+        /// <summary>
+        /// Calcul du CashFlow
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        public double CalculCashFlow(int i)
+         {
+             double cashFlow = 0;
+             if (i< nbAnnee-1)
+             {
+                 cashFlow = Ammortissement() + (ResultatAvantImpôt(i) - ValeurImpôt(i));
+             }
+             else
+                 cashFlow = (Ammortissement() + (ResultatAvantImpôt(i) - ValeurImpôt(i))) + valeurResid;
+
+             return cashFlow;
+         }
     }
 }

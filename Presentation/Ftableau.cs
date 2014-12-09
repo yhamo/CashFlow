@@ -69,14 +69,46 @@ namespace WindowsCashFlow
                 }
 
 
+
+                for (int i = 0; i < nbcolonnes; i++)
+                {
+                    dg_cash.Rows[3].Cells[i].Value = unCash.Ammortissement();
+                }
+
+               
+
+
                 for (int i = 0; i < nbcolonnes; i++)
                 {
                     dg_cash.Rows[4].Cells[i].Value = unCash.ChargesFixes[i] + unCash.ChargesVariables[i];
                 }
 
+
+
+                 for (int i = 0; i < nbcolonnes; i++)
+                {
+                    dg_cash.Rows[5].Cells[i].Value = unCash.ResultatAvantImpôt(i);
+                }
+
+
+                 for (int i = 0; i < nbcolonnes; i++)
+                 {
+                     dg_cash.Rows[6].Cells[i].Value = unCash.ValeurImpôt(i);
+                 }
+
+                 
+
+
+
+
+
+
                 dg_cash.Rows[8].Cells[nbcolonnes - 1].Value = unCash.ValeurResid;
 
-
+                for (int i = 0; i < nbcolonnes; i++)
+                {
+                    dg_cash.Rows[9].Cells[i].Value = unCash.CalculCashFlow(i);
+                }
 
 
                 //Deuxieme Data-grid
@@ -97,6 +129,23 @@ namespace WindowsCashFlow
                 nomsHeaderCell2.Add("VAN");
 
                 CreerDgv2(nomsHeaderCell2);
+
+                for (int i = 0; i < nbcolonnes; i++)
+                {
+                    dg_CashActualise.Rows[0].Cells[i].Value = unCash.CalculCashFlow(i);
+                }
+
+
+                for (int i = 0; i < nbcolonnes; i++)
+                {
+                    dg_CashActualise.Rows[1].Cells[i].Value = unCash.TxActualisation+" %";
+                }
+
+                for (int i = 0; i < nbcolonnes; i++)
+                {
+                    dg_CashActualise.Rows[2].Cells[i].Value = unCash.CFActualisé(i);
+                }
+
             }
         }
 
