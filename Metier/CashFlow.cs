@@ -102,7 +102,7 @@ namespace Metier
         /// <returns></returns>
         public double Ammortissement()
         {
-            return (0.0);
+            return ((InvetMateriel-ValeurResid)/NbAnnee);
         }
 
         /// <summary>
