@@ -89,7 +89,7 @@ namespace Metier
         }
         public double Ammortissement()
         {
-            return (0.0);
+            return ((InvetMateriel-ValeurResid)/NbAnnee);
         }
         public double ResultatAprèsImpôt()
         {
