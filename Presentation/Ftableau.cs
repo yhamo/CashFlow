@@ -146,6 +146,19 @@ namespace WindowsCashFlow
                     dg_CashActualise.Rows[2].Cells[i].Value = unCash.CFActualisé(i);
                 }
 
+               
+                    dg_CashActualise.Rows[4].Cells[0].Value = unCash.VAN();
+                
+
+                if (unCash.VAN()>0)
+                {
+                    lb_conc.Text = "Projet rentable, c'est bien ;)";
+
+                }
+                else
+                {
+                    lb_conc.Text = "Projet non rentable, c'est pas bien ;(";
+                }
             }
         }
 

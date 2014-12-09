@@ -137,7 +137,7 @@ namespace Metier
                  calcul = calcul + merde;
                  
              }
-             return calcul;
+             return calcul-investissement;
          }
         
 
