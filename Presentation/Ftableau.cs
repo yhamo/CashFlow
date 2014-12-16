@@ -152,12 +152,12 @@ namespace WindowsCashFlow
 
                 if (unCash.VAN()>0)
                 {
-                    lb_conc.Text = "Projet rentable, c'est bien ;)";
-
+                    lb_conc.Text = "Projet rentable, c'est bien \n je suis fiers de vous !";
+                   
                 }
                 else
                 {
-                    lb_conc.Text = "Projet non rentable, c'est pas bien ;(";
+                    lb_conc.Text = "Projet non rentable, c'est pas bien \n mais qu'est-ce qu'on va faire \n de toi";
                 }
             }
         }

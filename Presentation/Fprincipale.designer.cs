@@ -34,6 +34,7 @@
             this.valeurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saisieDonnéesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resultatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             this.valeurToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(486, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(573, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -83,16 +84,29 @@
             // resultatToolStripMenuItem
             // 
             this.resultatToolStripMenuItem.Name = "resultatToolStripMenuItem";
-            this.resultatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.resultatToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.resultatToolStripMenuItem.Text = "Resultat";
             this.resultatToolStripMenuItem.Click += new System.EventHandler(this.resultatToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(53, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(205, 36);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "A Vous De Jouer";
             // 
             // Fprincipale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(486, 322);
+            this.BackgroundImage = global::Presentation.Properties.Resources.AVousDeJouer;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(573, 349);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Fprincipale";
@@ -113,6 +127,7 @@
         private System.Windows.Forms.ToolStripMenuItem saisieDonnéesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resultatToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }
 
